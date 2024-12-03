@@ -31,7 +31,7 @@ $navLinks = array("index.php", "products.php", "contact.php");
     <?php
     // This is suppose to loop through navcaptions and navlinks to create nav menu
     for ($i = 0; $i < count($navCaptions); $i++) {
-        echo "<li>a href='" . $navLinks[$i] . "'>" . $navCaptions[$i] . "</a></li>";
+        echo "<li><a href='" . $navLinks[$i] . "'>" . $navCaptions[$i] . "</a></li>";
     }
     ?>
     </ul>
@@ -39,6 +39,7 @@ $navLinks = array("index.php", "products.php", "contact.php");
 
     <!-- Products Table -->
     <h1>My Insert Collection</h1>
+    <table border="1">
     <thead>
         <tr>
             <th>Name</th>
@@ -53,9 +54,13 @@ $navLinks = array("index.php", "products.php", "contact.php");
         foreach ( $products as $product ) {
             echo "<tr>";
             echo "<td>" . $product["name"] . "</td>";
+            echo "<td>$". number_format($product["Price"],2) ."</td>";
+            echo "<td>" . $product["Quantity"] . "</td>";
+            echo "<td>" . $product["Location"] . "</td>"; 
+            echo "</tr>";
             }
         ?>
     </tbody>
-
+</table>
 </body>
 </html>
