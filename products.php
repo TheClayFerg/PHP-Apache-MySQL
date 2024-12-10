@@ -10,13 +10,7 @@ $products = array(
     array("name"=> "Praying Mantis", "Price" => 60, "Quantity" => 7, "Location" => "USA"),
     array("name"=> "Scarab Beetle", "Price" => 75, "Quantity" => 2, "Location" => "Egypt"),
 );
-
-// Created the navigation array
-$navCaptions = array("Home", "Products", "Contact");
-$navLinks = array("index.php", "products.php", "contact.php");
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,15 +21,10 @@ $navLinks = array("index.php", "products.php", "contact.php");
 </head>
 <body>
     <div class="nav">
-    <ul>
-    <?php
-    // This is suppose to loop through navcaptions and navlinks to create nav menu
-    for ($i = 0; $i < count($navCaptions); $i++) {
-        echo "<li><a href='" . $navLinks[$i] . "'>" . $navCaptions[$i] . "</a></li>";
-    }
-    ?>
-    </ul>
-    </div>
+        <!-- Should include the Nav Menu -->
+        <?php 
+        include 'inc_navigation.php'; ?>
+        </div>
 
     <!-- Products Table -->
     <h1>My Insert Collection</h1>
@@ -63,4 +52,5 @@ $navLinks = array("index.php", "products.php", "contact.php");
     </tbody>
 </table>
 </body>
+<?php include 'inc_footer.php'; ?>
 </html>
